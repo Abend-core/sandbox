@@ -1,0 +1,35 @@
+body{
+    background: black;
+}
+
+#console{
+    width:40%;
+    height:40%;
+    margin-top:15%;
+    margin-left:30%;
+    border:1px solid white;
+}
+
+#message{
+    color:white;
+    margin-left: 2%;
+    margin-bottom: 5px;
+    margin-top:2px;
+}
+
+.ligne{
+    display: inline-block;
+}
+
+.disable{
+    background-color: black;
+    border:none;
+    color:white;
+    display: inline-block;
+    width:80%;
+}
+
+.disable:focus{
+    outline:none;
+}
+

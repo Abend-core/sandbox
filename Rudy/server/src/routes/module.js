@@ -1,41 +1,35 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
 const NewUUID = require("../tools/uuid.js");
-const User = require("../models/user");
 const Module = require("../models/module");
+const User = require("../models/user.js");
 
 // Création d'un nouvel utilisateur
 router.post("/", async (req, res) => {
+  const users = await User.findAll();
   const data = req.body;
-  const modules = await Module.findAll();
   data.id = NewUUID();
-  bcrypt.hash(data.password, 10).then((hash) => {
-    data.password = hash;
-    User.create(data)
-      .then((user) => {
-        res
-          .status(200)
-          .json({ message: "Utilisateur créé avec succès.", user });
-        for (i = 0; i < modules.length; i++) {
-          user.addModule(modules[i].id);
-        }
-      })
-      .catch((error) => {
-        if (error.name === "SequelizeValidationError") {
-          const errors = error.errors.map((err) => err.message);
-          return res.status(400).json({ errors });
-        }
-        res.status(500).json({ message: "Erreur serveur.", erreur: error });
-      });
-  });
+  Module.create(data)
+    .then((module) => {
+      res.status(200).json({ message: "Module créé avec succès.", module });
+      for (i = 0; i < users.length; i++) {
+        module.addUser(users[i].id);
+      }
+    })
+    .catch((error) => {
+      if (error.name === "SequelizeValidationError") {
+        const errors = error.errors.map((err) => err.message);
+        return res.status(400).json({ errors });
+      }
+      res.status(500).json({ message: "Erreur serveur.", erreur: error });
+    });
 });
 
 // Selection de tout les utilisateurs
 router.get("/", (req, res) => {
-  User.findAll()
-    .then((user) => {
-      res.status(200).json({ message: "Tout les utilisateurs.", user });
+  Module.findAll()
+    .then((module) => {
+      res.status(200).json({ message: "Tout les modules.", module });
     })
     .catch((error) => {
       if (error.name === "SequelizeValidationError") {
@@ -49,12 +43,12 @@ router.get("/", (req, res) => {
 // Selection d'un utilisateur
 router.get("/:id", (req, res) => {
   const id = req.params.id;
-  User.findByPk(id)
-    .then((user) => {
-      if (user) {
-        res.status(200).json({ message: "Utilisateur trouvé.", user });
+  Module.findByPk(id)
+    .then((module) => {
+      if (module) {
+        res.status(200).json({ message: "Module trouvé.", module });
       } else {
-        res.status(404).json({ message: "Utilisateur introuvable." });
+        res.status(404).json({ message: "Module introuvable." });
       }
     })
     .catch((error) => {
@@ -68,15 +62,15 @@ router.get("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const id = req.params.id;
-  User.update(req.body, {
+  Module.update(req.body, {
     where: { id: id },
   })
     .then((_) => {
-      return User.findByPk(id).then((user) => {
-        if (user === null) {
-          res.status(404).json({ message: "Utilisateur introuvable." });
+      return Module.findByPk(id).then((module) => {
+        if (module === null) {
+          res.status(404).json({ message: "Module introuvable." });
         }
-        res.status(200).json({ message: "Utilisateur modifié.", user });
+        res.status(200).json({ message: "Module modifié.", module });
       });
     })
     .catch((error) => {
@@ -88,15 +82,15 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", async (req, res) => {
-  User.findByPk(req.params.id)
-    .then((user) => {
-      if (user === null) {
-        res.status(404).json({ message: "Utilisateur introuvable.", user });
+router.delete("/:id", (req, res) => {
+  Module.findByPk(req.params.id)
+    .then((module) => {
+      if (module === null) {
+        res.status(404).json({ message: "Utilisateur introuvable.", module });
       }
 
-      return User.destroy({ where: { id: user.id } }).then((_) => {
-        res.status(200).json({ message: "Utilisateur supprimé.", user });
+      return Module.destroy({ where: { id: module.id } }).then((_) => {
+        res.status(200).json({ message: "Utilisateur supprimé.", module });
       });
     })
     .catch((error) => {

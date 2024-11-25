@@ -32,6 +32,9 @@ app.use(bodyParser.json());
 const users = require("./src/routes/user");
 app.use("/users", users);
 
+const modules = require("./src/routes/module");
+app.use("/modules", modules);
+
 app.get("/", (req, res) => {
   res.send("Hello Abend !");
 });

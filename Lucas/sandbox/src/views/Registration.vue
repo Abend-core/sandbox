@@ -1,5 +1,5 @@
 <template>
-  <p>Registration</p>
+  <p>Inscription</p>
   <form action="" class="flex flex-col" @submit.prevent="registration">
     <label for="name">
       Nom

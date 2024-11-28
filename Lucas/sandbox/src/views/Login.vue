@@ -1,5 +1,5 @@
 <template>
-  <p>Login</p>
+  <p>Connexion</p>
   <form action="" class="flex flex-col" @submit.prevent="login">
     <label for="login">
       Identifiant

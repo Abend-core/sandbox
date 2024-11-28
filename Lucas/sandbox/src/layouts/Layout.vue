@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#E8F5E9]">
+  <div class="flex flex-col h-screen bg-[#FDFDFD]">
     <Header />
     <div class="flex-1">
-      <Home />
+      <router-view />
     </div>
     <Footer />
   </div>

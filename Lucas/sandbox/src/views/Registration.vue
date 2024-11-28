@@ -47,9 +47,18 @@
         required
       />
     </label>
-    <button @click="registration" class="w-fit" type="submit">
-      Rejoindre Abend-core !
-    </button>
+    <label for="confirmPassword">
+      Confirmation Mot de passe
+      <input
+        type="password"
+        id="confirmPassword"
+        v-model="confirmPassword"
+        placeholder="Mot de passe"
+        minlength="8"
+        required
+      />
+    </label>
+    <button class="w-fit" type="submit">Rejoindre Abend-core !</button>
   </form>
 </template>
 
@@ -63,18 +72,20 @@ export default {
       loginRegister: "",
       birth: "",
       password: "",
+      confirmPassword: "",
     };
   },
   methods: {
     registration() {
-      console.log(
-        this.name,
-        this.firstName,
-        this.email,
-        this.loginRegister,
-        this.birth,
-        this.password
-      );
+      const data = {
+        name: this.name,
+        firstName: this.firstName,
+        email: this.email,
+        birth: this.birth,
+        password: this.password,
+        confirmPassword: this.confirmPassword,
+      };
+      console.log(data);
     },
   },
 };

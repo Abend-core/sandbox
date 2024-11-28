@@ -35,7 +35,11 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.idLogin, this.password);
+      const data = {
+        login: this.idLogin,
+        password: this.password,
+      };
+      console.log(data);
     },
   },
 };

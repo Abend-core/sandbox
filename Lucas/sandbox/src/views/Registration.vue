@@ -47,7 +47,7 @@
         required
       />
     </label>
-    <label for="confirmPassword">
+    <!-- <label for="confirmPassword">
       Confirmation Mot de passe
       <input
         type="password"
@@ -57,7 +57,7 @@
         minlength="8"
         required
       />
-    </label>
+    </label> -->
     <button class="w-fit" type="submit">Rejoindre Abend-core !</button>
   </form>
 </template>
@@ -72,7 +72,7 @@ export default {
       loginRegister: "",
       birth: "",
       password: "",
-      confirmPassword: "",
+      // confirmPassword: "",
     };
   },
   methods: {
@@ -83,7 +83,7 @@ export default {
         email: this.email,
         birth: this.birth,
         password: this.password,
-        confirmPassword: this.confirmPassword,
+        // confirmPassword: this.confirmPassword,
       };
       console.log(data);
     },

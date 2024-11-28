@@ -39,7 +39,25 @@ export default {
         login: this.idLogin,
         password: this.password,
       };
-      console.log(data);
+
+      fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((responseData) => {
+          const token = responseData.token;
+          const login = responseData.data.login;
+          localStorage.setItem("authToken", token);
+          localStorage.setItem("login", login);
+          // console.log("Token stocké :", token);
+          this.$router.push("/");
+        });
     },
   },
 };

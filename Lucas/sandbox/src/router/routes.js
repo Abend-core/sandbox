@@ -6,8 +6,8 @@ import Registration from "../views/Registration.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/login", component: Login },
-  { path: "/registration", component: Registration },
+  { path: "/connexion", component: Login },
+  { path: "/inscription", component: Registration },
 ];
 
 const router = createRouter({

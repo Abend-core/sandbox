@@ -1,9 +1,17 @@
 <template>
   <div>
-    <p>Content</p>
+    <p>Bonjour {{ login }}</p>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      login: localStorage.getItem("login"),
+    };
+  },
+};
+</script>
 
 <style></style>

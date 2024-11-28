@@ -21,8 +21,9 @@
         src="../assets/images/à-modifier-lune.png"
         alt="Mode Sombre"
       />
-      <RouterLink to="/login">Login</RouterLink>
-      <RouterLink to="/registration">Inscription</RouterLink>
+      <RouterLink to="/connexion">Login</RouterLink>
+      <RouterLink to="/inscription">Inscription</RouterLink>
+      <!-- <button>Déconnexion</button> -->
     </div>
   </header>
 </template>

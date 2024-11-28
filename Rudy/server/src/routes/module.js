@@ -3,9 +3,10 @@ const router = express.Router();
 const NewUUID = require("../tools/uuid.js");
 const Module = require("../models/module");
 const User = require("../models/user.js");
+const auth = require('../auth/auth.js')
 
 // Création d'un nouvel utilisateur
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const users = await User.findAll();
   const data = req.body;
   data.id = NewUUID();

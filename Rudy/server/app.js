@@ -12,22 +12,25 @@ require("./src/database/init");
 if (port == 5000) {
   corsOptions = {
     origin: ["http://localhost:5000", "http://localhost:5173"],
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    methods: ["GET", "HEAD", "POST"],
     allowedHeaders: ["Content-Type"],
-    maxAge: 3000, // 1 jour en secondes
+    maxAge: 3000, 
   };
 } else {
   corsOptions = {
     origin: "www.abend-core.com",
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    methods: ["GET", "HEAD", "POST"],
     allowedHeaders: ["Content-Type"],
-    maxAge: 3000, // 1 jour en secondes
+    maxAge: 3000, 
   };
 }
 
 const app = express();
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+
+const login = require("./src/routes/login");
+app.use("/", login);
 
 const users = require("./src/routes/user");
 app.use("/users", users);

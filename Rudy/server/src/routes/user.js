@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const NewUUID = require("../tools/uuid.js");
+const auth = require('../auth/auth')
 const User = require("../models/user");
 const Module = require("../models/module");
 
 // Création d'un nouvel utilisateur
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const data = req.body;
   const modules = await Module.findAll();
   data.id = NewUUID();
@@ -32,7 +33,7 @@ router.post("/", async (req, res) => {
 });
 
 // Selection de tout les utilisateurs
-router.get("/", (req, res) => {
+router.get("/", auth, (req, res) => {
   User.findAll()
     .then((user) => {
       res.status(200).json({ message: "Tout les utilisateurs.", user });

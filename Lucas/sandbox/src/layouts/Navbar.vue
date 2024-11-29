@@ -23,11 +23,21 @@
       />
       <RouterLink to="/connexion">Login</RouterLink>
       <RouterLink to="/inscription">Inscription</RouterLink>
-      <!-- <button>Déconnexion</button> -->
+      <button @click="logOut">Déconnexion</button>
     </div>
   </header>
 </template>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    logOut() {
+      sessionStorage.clear();
+      this.$router.push("/");
+      location.reload();
+    },
+  },
+};
+</script>
 
 <style></style>

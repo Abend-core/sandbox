@@ -53,8 +53,8 @@ export default {
         .then((responseData) => {
           const token = responseData.token;
           const login = responseData.data.login;
-          localStorage.setItem("authToken", token);
-          localStorage.setItem("login", login);
+          sessionStorage.setItem("authToken", token);
+          sessionStorage.setItem("login", login);
           // console.log("Token stocké :", token);
           this.$router.push("/");
         });

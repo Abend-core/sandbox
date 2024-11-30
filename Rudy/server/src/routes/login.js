@@ -1,11 +1,11 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const privateKey = require("../auth/key");
+const privateKey = require("../middleware/auth/key.js");
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user.js");
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const user = await User.findOne({ where: { login: req.body.login } });
 

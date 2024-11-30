@@ -3,10 +3,11 @@ const router = express.Router();
 const NewUUID = require("../tools/uuid.js");
 const Module = require("../models/module");
 const User = require("../models/user.js");
-const auth = require("../auth/auth.js");
+const auth = require("../middleware/auth/auth.js");
+const role = require("../middleware/role.js");
 
-// Création d'un nouvel utilisateur
-router.post("/add", auth, async (req, res) => {
+// Création d'un nouveau module
+router.post("/add", auth, role, async (req, res) => {
   const users = await User.findAll();
   const data = req.body;
   data.id = NewUUID();
@@ -26,7 +27,7 @@ router.post("/add", auth, async (req, res) => {
     });
 });
 
-// Selection de tout les utilisateurs
+// Selection de tout les modules
 router.get("/", (req, res) => {
   Module.findAll()
     .then((module) => {
@@ -41,7 +42,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Selection d'un utilisateur
+// Selection d'un module
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   Module.findByPk(id)
@@ -61,7 +62,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/update/:id", (req, res) => {
+router.post("/update/:id", auth, role, (req, res) => {
   const id = req.params.id;
   Module.update(req.body, {
     where: { id: id },
@@ -83,7 +84,7 @@ router.post("/update/:id", (req, res) => {
     });
 });
 
-router.post("/delete/:id", (req, res) => {
+router.post("/delete/:id", auth, role, (req, res) => {
   Module.findByPk(req.params.id)
     .then((module) => {
       if (module === null) {

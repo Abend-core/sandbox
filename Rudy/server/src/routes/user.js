@@ -2,12 +2,13 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const NewUUID = require("../tools/uuid.js");
-const auth = require("../auth/auth");
+const auth = require("../middleware/auth/auth.js");
+const role = require("../middleware/role.js");
 const User = require("../models/user");
 const Module = require("../models/module");
 
 // Création d'un nouvel utilisateur
-router.post("/inscription", auth, async (req, res) => {
+router.post("/add", auth, role, async (req, res) => {
   const data = req.body;
   const modules = await Module.findAll();
   data.id = NewUUID();
@@ -33,7 +34,7 @@ router.post("/inscription", auth, async (req, res) => {
 });
 
 // Selection de tout les utilisateurs
-router.get("/", auth, (req, res) => {
+router.get("/", auth, role, (req, res) => {
   User.findAll()
     .then((user) => {
       res.status(200).json({ message: "Tout les utilisateurs.", user });
@@ -48,7 +49,7 @@ router.get("/", auth, (req, res) => {
 });
 
 // Selection d'un utilisateur
-router.get("/:id", (req, res) => {
+router.get("/:id", auth, role, (req, res) => {
   const id = req.params.id;
   User.findByPk(id)
     .then((user) => {
@@ -67,7 +68,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/update/:id", (req, res) => {
+router.post("/update/:id", auth, role, (req, res) => {
   const id = req.params.id;
   User.update(req.body, {
     where: { id: id },
@@ -89,7 +90,7 @@ router.post("/update/:id", (req, res) => {
     });
 });
 
-router.post("/delete/:id", async (req, res) => {
+router.post("/delete/:id", auth, role, async (req, res) => {
   User.findByPk(req.params.id)
     .then((user) => {
       if (user === null) {

@@ -75,6 +75,7 @@ export default {
       // confirmPassword: "",
     };
   },
+  emits: ["login"],
   methods: {
     registration() {
       const data = {

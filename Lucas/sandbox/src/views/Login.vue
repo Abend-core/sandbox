@@ -1,28 +1,28 @@
 <template>
-  <p>Connexion</p>
-  <form action="" class="flex flex-col" @submit.prevent="login">
-    <label for="login">
-      Identifiant
-      <input
-        type="text"
-        id="login"
-        v-model="idLogin"
-        placeholder="Identifiant"
-      />
-    </label>
-    <label for="password">
-      Mot de passe
-      <input
-        type="password"
-        id="password"
-        v-model="password"
-        placeholder="Mot de passe"
-      />
-    </label>
-    <button @click="registration" class="w-fit" type="submit">
-      Se connecter !
-    </button>
-  </form>
+  <div>
+    <p>Connexion</p>
+    <form action="" class="flex flex-col" @submit.prevent="loginUser">
+      <label for="login">
+        Identifiant
+        <input
+          type="text"
+          id="login"
+          v-model="idLogin"
+          placeholder="Identifiant"
+        />
+      </label>
+      <label for="password">
+        Mot de passe
+        <input
+          type="password"
+          id="password"
+          v-model="password"
+          placeholder="Mot de passe"
+        />
+      </label>
+      <button class="w-fit" type="submit">Se connecter !</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -33,8 +33,9 @@ export default {
       password: "",
     };
   },
+  emits: ["login"],
   methods: {
-    login() {
+    loginUser() {
       const data = {
         login: this.idLogin,
         password: this.password,
@@ -47,20 +48,19 @@ export default {
         },
         body: JSON.stringify(data),
       })
-        .then((res) => {
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((responseData) => {
           const token = responseData.token;
-          const login = responseData.data.login;
           sessionStorage.setItem("authToken", token);
-          sessionStorage.setItem("login", login);
-          // console.log("Token stocké :", token);
+          console.log("Connexion réussie !");
+          // $emit permet d'émettre un événement de l'enfant vers le parent
+          this.$emit("login");
           this.$router.push("/");
+        })
+        .catch((error) => {
+          console.error("Erreur de connexion:", error);
         });
     },
   },
 };
 </script>
-
-<style></style>

@@ -1,6 +1,4 @@
 <template>
-  <!-- <p v-if="login">Bonjour {{ login }}</p>
-    <p v-else>Bonjour</p> -->
   <div class="content">
     <div class="first-row flex justify-center gap-[65px] p-[50px] mb-[-75px]">
       <div
@@ -139,10 +137,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
-const login = ref(sessionStorage.getItem("login"));
+export default {
+  name: "Home",
+  emits: ["login"],
+};
 </script>
-
+<!-- Déclare que ce composant émet un événement personnalisé "login"
+cela permet à Vue de gérer correctement cet événement dans le composant parent -->
 <style scoped>
 img {
   rotate: 321deg;

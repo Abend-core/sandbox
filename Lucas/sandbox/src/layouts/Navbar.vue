@@ -21,23 +21,30 @@
         src="../assets/images/à-modifier-lune.png"
         alt="Mode Sombre"
       />
-      <RouterLink to="/connexion">Login</RouterLink>
-      <RouterLink to="/inscription">Inscription</RouterLink>
-      <button @click="logOut">Déconnexion</button>
+      <RouterLink to="/connexion" v-if="!isAuthenticated">Login</RouterLink>
+      <RouterLink to="/inscription" v-if="!isAuthenticated"
+        >Inscription</RouterLink
+      >
+      <button v-if="isAuthenticated" @click="logOut">Déconnexion</button>
     </div>
   </header>
 </template>
 
 <script>
 export default {
+  emits: ["login"],
+  // ces props permettent de recevoir la valeur de l'authentification de son parent Layout.vue
+  props: {
+    isAuthenticated: {
+      type: Boolean,
+      required: true,
+    },
+  },
   methods: {
     logOut() {
-      sessionStorage.clear();
-      this.$router.push("/");
-      location.reload();
+      sessionStorage.removeItem("authToken");
+      this.$emit("logout");
     },
   },
 };
 </script>
-
-<style></style>

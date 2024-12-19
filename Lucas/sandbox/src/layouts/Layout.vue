@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#FDFDFD]">
+  <div class="flex flex-col h-screen bg-[#F6F5F5]">
     <Header />
-    <div class="flex-1">
+    <div class="flex-1 w-full">
       <router-view />
     </div>
     <Footer />

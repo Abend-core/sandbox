@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  emits: ["login"],
+  emits: ["login", "logout"],
   // ces props permettent de recevoir la valeur de l'authentification de son parent Layout.vue
   props: {
     isAuthenticated: {

@@ -9,8 +9,8 @@
       Prénom
       <input
         type="text"
-        id="firstName"
-        v-model="firstName"
+        id="firstname"
+        v-model="firstname"
         placeholder="Prénom"
       />
     </label>
@@ -47,17 +47,6 @@
         required
       />
     </label>
-    <!-- <label for="confirmPassword">
-      Confirmation Mot de passe
-      <input
-        type="password"
-        id="confirmPassword"
-        v-model="confirmPassword"
-        placeholder="Mot de passe"
-        minlength="8"
-        required
-      />
-    </label> -->
     <button class="w-fit" type="submit">Rejoindre Abend-core !</button>
   </form>
 </template>
@@ -67,12 +56,11 @@ export default {
   data() {
     return {
       name: "",
-      firstName: "",
+      firstname: "",
       email: "",
       loginRegister: "",
       birth: "",
       password: "",
-      // confirmPassword: "",
     };
   },
   emits: ["login"],
@@ -80,13 +68,29 @@ export default {
     registration() {
       const data = {
         name: this.name,
-        firstName: this.firstName,
-        email: this.email,
+        firstname: this.firstname,
+        mail: this.email,
+        login: this.loginRegister,
         birth: this.birth,
         password: this.password,
-        // confirmPassword: this.confirmPassword,
+        isAdmin: false,
+        isLog: false,
       };
-      console.log(data);
+
+      fetch("http://localhost:5000/inscription", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((responseData) => {
+          this.$router.push("/connexion");
+        })
+        .catch((error) => {
+          console.error("Erreur lors de l'inscription :", error);
+        });
     },
   },
 };

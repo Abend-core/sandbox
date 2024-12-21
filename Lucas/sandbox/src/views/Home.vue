@@ -1,145 +1,192 @@
 <template>
-  <div class="content">
-    <div class="first-row flex justify-center gap-[65px] p-[50px] mb-[-75px]">
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+  <div class="content w-full">
+    <div
+      class="first-row grid auto-cols-[96px] gap-8 justify-start p-[16px] mb-[-32px] whitespace-nowrap grid-flow-col"
+    >
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img
           class="blur-sm"
           src="../assets/images/abend-core-logo.png"
           alt=""
         />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+      </a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img src="../assets/images/abend-core-logo.png" alt="" />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
+      </a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
     </div>
-    <div class="second-row flex justify-center gap-[66px] mb-[-75px]">
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+    <div
+      class="second-row grid auto-cols-[96px] gap-8 justify-start p-[16px] whitespace-nowrap mb-[-32px] grid-flow-col"
+    >
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img
           class="blur-sm"
           src="../assets/images/abend-core-logo.png"
           alt=""
         />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+      </a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img src="../assets/images/abend-core-logo.png" alt="" />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
+      </a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
     </div>
-    <div class="third-row flex justify-center gap-[65px] p-[50px]">
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+    <div
+      class="third-row grid auto-cols-[96px] gap-8 justify-start p-[16px] whitespace-nowrap grid-flow-col"
+    >
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img
           class="blur-sm"
           src="../assets/images/abend-core-logo.png"
           alt=""
         />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      >
+      </a>
+      <a class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45">
         <img src="../assets/images/abend-core-logo.png" alt="" />
-      </div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
-      <div
-        class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl rotate-45"
-      ></div>
+      </a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
+      <a
+        class="rectangle w-[96px] h-[96px] bg-[#D9D9D9] rounded-2xl rotate-45"
+      ></a>
     </div>
   </div>
-  <!-- <div class="test w-full pt-[30px] pb-[30px] overflow-hidden"> -->
-  <!-- <div
-      class="first-row grid auto-cols-[180px] grid-flow-col gap-[15px] mb-[10px] ml-[-30px]"
-    >
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-    </div>
-    <div
-      class="second-row grid auto-cols-[180px] grid-flow-col gap-[15px] mb-[10px] ml-[65  px]"
-    >
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-    </div>
-    <div
-      class="third-row grid auto-cols-[180px] grid-flow-col gap-[15px] ml-[-30px]"
-    >
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-      <div class="rectangle w-[150px] h-[150px] bg-[#D9D9D9] rounded-2xl"></div>
-    </div> -->
-  <!-- </div> -->
-
-  <!-- </div> -->
 </template>
 
 <script>
 export default {
   name: "Home",
-  emits: ["login"],
+  emits: ["login", "logout"],
 };
 </script>
 <!-- Déclare que ce composant émet un événement personnalisé "login"
@@ -147,5 +194,20 @@ cela permet à Vue de gérer correctement cet événement dans le composant pare
 <style scoped>
 img {
   rotate: 321deg;
+}
+.rectangle {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.first-row,
+.third-row {
+  transform: translate3d(40px, 0, 0);
+}
+
+.second-row {
+  transform: translate3d(-24px, 0, 0);
 }
 </style>

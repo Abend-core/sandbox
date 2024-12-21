@@ -33,7 +33,7 @@ export default {
       password: "",
     };
   },
-  emits: ["login"],
+  emits: ["login", "logout"],
   methods: {
     loginUser() {
       const data = {
@@ -52,7 +52,6 @@ export default {
         .then((responseData) => {
           const token = responseData.token;
           sessionStorage.setItem("authToken", token);
-          console.log("Connexion réussie !");
           // $emit permet d'émettre un événement de l'enfant vers le parent
           this.$emit("login");
           this.$router.push("/");

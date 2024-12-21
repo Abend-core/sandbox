@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#F6F5F5]">
+  <div class="flex flex-col h-screen">
     <!-- permet de savoir si l'utilisateur est connecté où non à travers tout le site -->
     <!-- :isAuthenticated permet de passer la valeur de la variable isAuthenticated au Header et ainsi
       de réagir dynamiquement si l'utilisateur est connecté ou non -->
@@ -7,7 +7,7 @@
     <!-- : est utilisé pour passer des données d'un composant à un autre -->
     <!-- alors que @ est utilisé pour écouter un événement émis par un composant enfant (ici, 
      logout provient de header plus précisément navbar) -->
-    <div class="flex-1 w-full">
+    <div class="flex-1 overflow-hidden">
       <!-- router-view permet de rendre dynamique les composants, 
        c'est lui qui gère l'affichage selon les routes qu'on recherche  -->
       <!-- grâce à ce router-view, mon header et mon footer restent en place sur tous autres composants -->
@@ -24,7 +24,7 @@ import Home from "../views/Home.vue";
 
 export default {
   name: "Layout",
-  emits: ["login"],
+  emits: ["login", "logout"],
   components: {
     Header,
     Footer,
